@@ -13,6 +13,12 @@
       }
     }
   },
+  "staticFiles": {
+    "dataadminFiles": {
+      "path": "/",
+      "folder": "cwd:public"
+    }
+  },
   "handler": {
     "options": {
       "authentication": {
@@ -20,5 +26,10 @@
         "password": "public"
       }
     }
+  },
+  "renderer": {
+    "module": "trifid-renderer-simple",
+    "template": "cwd:data/template.html",
+    "vocab": "renderer:vocab.json"
   }
 }
