@@ -1,0 +1,15 @@
+{
+  "name": "ld.stadt-zuerich.ch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "trifid": "^1.6.2"
+  },
+  "devDependencies": {},
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "trifid --config config.ssz.json",
+    "start-local": "trifid --config config.ssz.local.json"
+  }
+}

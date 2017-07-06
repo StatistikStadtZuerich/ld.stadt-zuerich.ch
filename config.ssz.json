@@ -1,0 +1,24 @@
+{
+  "baseConfig": "trifid:config-sparql.json",
+  "listener": {
+       "port": 8080
+  },
+  "sparqlEndpointUrl": "https://lindas-data.ch:8443/lindas/query",
+  "sparqlProxy": {
+    "options": {
+      "queryOperation": "postQueryUrlencoded",
+      "authentication": {
+        "user": "public",
+        "password": "public"
+      }
+    }
+  },
+  "handler": {
+    "options": {
+      "authentication": {
+        "user": "public",
+        "password": "public"
+      }
+    }
+  }
+}
