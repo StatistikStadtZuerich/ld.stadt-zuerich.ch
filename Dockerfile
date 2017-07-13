@@ -2,9 +2,7 @@ FROM node:6.10-onbuild
 
 RUN npm install pm2 -g
 
-ENV TRIFID_CONFIG config.ssz.json
-
-ADD config.ssz.json /usr/src/app/
+ADD config.json /usr/src/app/
 ADD pm2-config.yml /usr/src/app
 #ADD data /usr/src/app/data
 

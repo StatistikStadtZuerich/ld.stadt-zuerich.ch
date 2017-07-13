@@ -30,6 +30,7 @@
   "renderer": {
     "module": "trifid-renderer-simple",
     "template": "cwd:data/template.html",
+    "templateError": "cwd:data/error.html",
     "vocab": "renderer:vocab.json"
   }
 }

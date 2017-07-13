@@ -1,5 +1,5 @@
 {
-  "baseConfig": "cwd:config.ssz.json",
+  "baseConfig": "cwd:config.json",
   "datasetBaseUrl": "http://data.zuerich.ch/"
 }
 
