@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "trifid": "^1.7.2"
+    "trifid": "^1.7.9"
   },
   "devDependencies": {},
   "license": "UNLICENSED",
