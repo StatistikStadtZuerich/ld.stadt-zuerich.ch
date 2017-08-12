@@ -1,10 +1,6 @@
-FROM node:6.10-onbuild
+FROM node:6-onbuild
 
 RUN npm install pm2 -g
+CMD pm2-docker start npm -- start
 
-ADD config.json /usr/src/app/
-ADD pm2-config.yml /usr/src/app
-#ADD data /usr/src/app/data
-
-CMD ["pm2-docker", "pm2-config.yml"]
 EXPOSE 8080
