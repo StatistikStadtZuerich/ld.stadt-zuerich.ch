@@ -13,12 +13,14 @@
       }
     }
   },
-  "staticFiles": {
-    "dataadminFiles": {
-      "path": "/",
-      "folder": "cwd:public"
+  "hydraViews": [{
+    "documentationUrl": "/api",
+    "documentation": "cwd:../hydra-view/examples/zuerich2.api.json",
+    "options": {
+      "sparqlEndpointUrl": "http://ld.stadt-zuerich.ch/query",
+      "debug": true
     }
-  },
+  }],
   "handler": {
     "options": {
       "authentication": {
