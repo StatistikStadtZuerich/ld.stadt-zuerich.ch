@@ -11,11 +11,11 @@
     "@id": "http://ld.stadt-zuerich.ch/api/statistics/input/flaechen",
     "@type": "Class",
     "supportedProperty": [{
-      "property": "http://ld-stadt-zuerich.ch/api/statistics/property/FROM"
+      "property": "http://ld.stadt-zuerich.ch/api/statistics/property/FROM"
     }, {
-      "property": "http://ld-stadt-zuerich.ch/api/statistics/property/RAUM"
+      "property": "http://ld.stadt-zuerich.ch/api/statistics/property/RAUM"
     }, {
-      "property": "http://ld-stadt-zuerich.ch/api/statistics/property/TO"
+      "property": "http://ld.stadt-zuerich.ch/api/statistics/property/TO"
     }]
   }, {
     "@id": "http://ld.stadt-zuerich.ch/api/statistics/output/flaechen",
@@ -66,15 +66,15 @@
     "mapping": [{
       "@type": "IriTemplateMapping",
       "variable": "raum",
-      "property": "http://ld-stadt-zuerich.ch/api/statistics/property/RAUM"
+      "property": "http://ld.stadt-zuerich.ch/api/statistics/property/RAUM"
     }, {
       "@type": "IriTemplateMapping",
       "variable": "from",
-      "property": "http://ld-stadt-zuerich.ch/api/statistics/property/FROM"
+      "property": "http://ld.stadt-zuerich.ch/api/statistics/property/FROM"
     }, {
       "@type": "IriTemplateMapping",
       "variable": "to",
-      "property": "http://ld-stadt-zuerich.ch/api/statistics/property/TO"
+      "property": "http://ld.stadt-zuerich.ch/api/statistics/property/TO"
     }]
   }, {
       "@id": "http://ld.stadt-zuerich.ch/api/statistics/view/property/get",
@@ -92,7 +92,7 @@
       "http://example.org/hv/code": {
         "@type": "http://example.org/hv/SparqlQuery",
         "http://example.org/hv/source": {
-          "@id": "file://statistics.property.sparql"
+          "@id": "file://property.sparql"
         }
       },
       "expects": "http://ld.stadt-zuerich.ch/api/statistics/input/property",
