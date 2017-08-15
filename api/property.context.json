@@ -1,0 +1,10 @@
+{"@context":
+ {
+  "member": "http://www.w3.org/ns/hydra/core#member",
+  "notation": "http://www.w3.org/2004/02/skos/core#notation",
+  "label": {
+    "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+    "@language": "de-ch"
+  } 
+ }
+}
