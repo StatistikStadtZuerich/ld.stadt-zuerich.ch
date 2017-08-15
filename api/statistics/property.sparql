@@ -1,0 +1,13 @@
+CONSTRUCT {
+  <http://ld.stadt-zuerich.ch/statistics/property/${property.value}> a <http://www.w3.org/ns/hydra/core#Collection> .
+  <http://ld.stadt-zuerich.ch/statistics/property/${property.value}> <http://www.w3.org/ns/hydra/core#member> ?value .
+  ?value <http://www.w3.org/2004/02/skos/core#notation> ?notation .
+  ?value <http://www.w3.org/2002/07/owl#hasValue> ?notation .
+  ?value <http://www.w3.org/2000/01/rdf-schema#label> ?label .
+} WHERE {
+  SELECT DISTINCT ?value ?notation ?label WHERE {
+    ?s <http://ld.stadt-zuerich.ch/statistics/property/${property.value}> ?value .
+    ?value <http://www.w3.org/2004/02/skos/core#notation> ?notation .
+    ?value <http://www.w3.org/2000/01/rdf-schema#label> ?label .
+  }
+}

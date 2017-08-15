@@ -48,7 +48,7 @@
       }
     },
     "http://example.org/hv/returnFrame": {
-      "@id": "file://statistics.context.json"
+      "@id": "file://flaechen.context.json"
     },
     "expects": "http://ld.stadt-zuerich.ch/api/statistics/input/flaechen",
     "returns": "http://ld.stadt-zuerich.ch/api/statistics/output/flaechen"
