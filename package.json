@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "trifid": "zazuko/trifid#develop"
+    "trifid": "github:zazuko/trifid#develop"
   },
   "devDependencies": {},
   "license": "UNLICENSED",
