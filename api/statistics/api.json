@@ -50,6 +50,9 @@
     "http://example.org/hv/returnFrame": {
       "@id": "file://flaechen.context.json"
     },
+    "http://example.org/hv/returnCSVMetadata": {
+      "@id": "file://flaechen.csv-metadata.json"
+    },
     "expects": "http://ld.stadt-zuerich.ch/api/statistics/input/flaechen",
     "returns": "http://ld.stadt-zuerich.ch/api/statistics/output/flaechen"
   }, {
