@@ -14,8 +14,8 @@ Intro RDF (lightning talk)?
   - [API (Zazuko Trifid)](http://ld.stadt-zuerich.ch/api) -> beschrieben als RDF 
 
 ### Frontend
+stat.stadt-zuerich.ch
 
-  - stat.stadt-zuerich.ch
   - PoC
     - [d3-sparql Visual Primitives Widget](https://zazuko.github.io/ssz-webcomp-test/)
     - [WebData Widget](http://localhost:9966/index-widget.dev.html)
@@ -23,9 +23,16 @@ Intro RDF (lightning talk)?
   - Templates (gesteuert durch Beschreibung) -> Routing, HTML
   - WebComponents (für interaktive Elemente) -> WebComponents
 
-## Phase2
 
-- Pipelines Fertigstellung / Qualitätstest
+## Phase2
+### Dataflow
+![DataFlow](dataflow.png "DataFlow")
+
+### Website
+![Website](website.png "Web Site")
+
+### 
+- Pipelines Fertigstellung / Validations Checks
 - API Komponente Fertigstellung
 
 - stat.stadt-zuerich.ch (Zazuko Trifid)
