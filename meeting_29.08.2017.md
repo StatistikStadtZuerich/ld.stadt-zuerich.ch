@@ -36,9 +36,9 @@ Intro RDF (lightning talk)?
 - WebComponents (zwei Layers)
   - WebComponents Visual Primitives
     - D3 Widgets Modularisierung
-      - <sszvis-line data=“”>
+      - `<sszvis-line data=“”>`
     - Parametrisierbar
-      - <sszvis-line title=“” ..> 
+      - `<sszvis-line title=“” ..>`
   - WebComponents DataConnector
     - API Introspection
     - STIP Elemente (komplexere Elemente)
