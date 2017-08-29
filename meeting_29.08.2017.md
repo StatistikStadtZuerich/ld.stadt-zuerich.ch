@@ -31,7 +31,6 @@ stat.stadt-zuerich.ch
 ### Website
 ![Website](website.png "Web Site")
 
-### 
 - Pipelines Fertigstellung / Validations Checks
 - API Komponente Fertigstellung
 
