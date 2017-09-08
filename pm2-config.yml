@@ -1,4 +1,0 @@
-apps:
-  - script   : ./node_modules/.bin/trifid
-    name     : 'ld.stadt-zuerich.ch'
-    args     : '--config config.json'
