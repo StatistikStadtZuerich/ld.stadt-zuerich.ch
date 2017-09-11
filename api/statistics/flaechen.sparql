@@ -31,7 +31,7 @@ WHERE {
 
     # Filter per Property
     FILTER (?flaecheNotation IN("BBA1310"))
-    ${raum ? 'FILTER (?raumNotation IN (' + (raum.join ? raum.map(v => v.toCanonical()).join() : raum.toCanonical()) + '))' : ''}
+    ${typeof raum !== 'undefined'? 'FILTER (?raumNotation IN (' + (raum.join ? raum.map(v => v.toCanonical()).join() : raum.toCanonical()) + '))' : ''}
 
     # Filter Time Range
     ${typeof from !== 'undefined'? 'FILTER (?zeit >= xsd:datetime("'+from+'"))':''}
