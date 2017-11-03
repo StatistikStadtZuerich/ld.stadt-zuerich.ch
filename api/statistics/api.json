@@ -20,11 +20,11 @@
         "http://example.org/hv/code": {
           "@type": "http://example.org/hv/SparqlQuery",
           "http://example.org/hv/source": {
-            "@id": "file://flaechen.sparql"
+            "@id": "flaechen.sparql"
           }
         },
         "http://example.org/hv/returnFrame": {
-          "@id": "file://flaechen.context.json"
+          "@id": "flaechen.context.json"
         },
         "expects": "http://ld.stadt-zuerich.ch/api/TimeRange",
         "returns": "http://ld.stadt-zuerich.ch/api/Result"
@@ -46,7 +46,7 @@
         "http://example.org/hv/code": {
           "@type": "http://example.org/hv/SparqlQuery",
           "http://example.org/hv/source": {
-            "@id": "file://property.sparql"
+            "@id": "property.sparql"
           }
         },
         "expects": "http://ld.stadt-zuerich.ch/api/Property",

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "trifid": "zazuko/trifid#hydra-box"
+    "trifid": "github:zazuko/trifid#hydra-box"
   },
   "devDependencies": {},
   "license": "UNLICENSED",
