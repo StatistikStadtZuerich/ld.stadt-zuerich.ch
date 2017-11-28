@@ -4,27 +4,27 @@
     "@id": "http://ld.stadt-zuerich.ch/api/statistics/Api",
     "@type": "Class",
     "supportedProperty": [{
-      "@id": "http://ld.stadt-zuerich.ch/api/statistics/flaechen",
+      "@id": "http://ld.stadt-zuerich.ch/api/statistics/BAU001",
       "@type": "Collection",
-      "search": "http://ld.stadt-zuerich.ch/api/statistics/flaechen#search",
+      "search": "http://ld.stadt-zuerich.ch/api/statistics/BAU001#search",
        "supportedOperation": [{
-        "@id": "http://ld.stadt-zuerich.ch/api/statistics/flaechen#get",
+        "@id": "http://ld.stadt-zuerich.ch/api/statistics/BAU001#get",
         "@type": [
           "Operation",
           "http://example.org/hv/HydraView"
         ],
         "method": "GET",
         "http://example.org/hv/variables": {
-          "@id": "http://ld.stadt-zuerich.ch/api/statistics/flaechen#search"
+          "@id": "http://ld.stadt-zuerich.ch/api/statistics/BAU001#search"
         },
         "http://example.org/hv/code": {
           "@type": "http://example.org/hv/SparqlQuery",
           "http://example.org/hv/source": {
-            "@id": "flaechen.sparql"
+            "@id": "BAU001.sparql"
           }
         },
-        "http://example.org/hv/returnFrame": {
-          "@id": "flaechen.context.json"
+        "http://example.org/hv/returnFrame_DISABLED": {
+          "@id": "BAU001.context.json"
         },
         "expects": "http://ld.stadt-zuerich.ch/api/TimeRange",
         "returns": "http://ld.stadt-zuerich.ch/api/Result"
@@ -71,9 +71,9 @@
     "@id": "http://ld.stadt-zuerich.ch/api/Result",
     "@type": "Class"
   }, {
-    "@id": "http://ld.stadt-zuerich.ch/api/statistics/flaechen#search",
+    "@id": "http://ld.stadt-zuerich.ch/api/statistics/BAU001#search",
     "@type": "IriTemplate",
-    "template": "/api/statistics/flaechen/{?from,to,raum,flaechen}",
+    "template": "/api/statistics/BAU001/{?from,to,raum,bba}",
     "variableRepresentation": "BasicRepresentation",
     "mapping": [{
       "@type": "IriTemplateMapping",
@@ -85,8 +85,8 @@
       "property": "http://ld.stadt-zuerich.ch/api/statistics/property/TO"
     }, {
       "@type": "IriTemplateMapping",
-      "variable": "flaechen",
-      "property": "http://ld.stadt-zuerich.ch/api/statistics/property/FLAECHEN"
+      "variable": "bba",
+      "property": "http://ld.stadt-zuerich.ch/api/statistics/property/BBA"
     }, {
       "@type": "IriTemplateMapping",
       "variable": "raum",
