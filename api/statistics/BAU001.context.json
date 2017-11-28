@@ -7,33 +7,12 @@
       "@id": "http://ld.stadt-zuerich.ch/statistics/property/EINHEIT",
       "@type": "@id"
     },
-    "gruppencode1": {
-      "@id": "http://ld.stadt-zuerich.ch/statistics/property/GRUPPENCODE1",
-      "@type": "@id"
-    },
-    "gruppencode2": {
-      "@id": "http://ld.stadt-zuerich.ch/statistics/property/GRUPPENCODE2",
-      "@type": "@id"
-    },
-    "gruppencode3": {
-      "@id": "http://ld.stadt-zuerich.ch/statistics/property/GRUPPENCODE3",
-      "@type": "@id"
-    },
-    "gruppencode4": {
-      "@id": "http://ld.stadt-zuerich.ch/statistics/property/GRUPPENCODE4",
-      "@type": "@id"
-    },
-    "gruppencode5": {
-      "@id": "http://ld.stadt-zuerich.ch/statistics/property/GRUPPENCODE5",
-      "@type": "@id"
-    },
     "kennzahl": {
       "@id": "http://ld.stadt-zuerich.ch/statistics/property/KENNZAHL",
       "@type": "@id"
     },
     "label": {
-      "@id": "http://www.w3.org/2000/01/rdf-schema#label",
-      "@language": "de-ch"
+      "@id": "http://www.w3.org/2000/01/rdf-schema#label"
     },
     "notation": {
       "@id": "http://www.w3.org/2004/02/skos/core#notation"

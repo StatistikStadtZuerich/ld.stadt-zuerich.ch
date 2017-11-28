@@ -23,7 +23,7 @@
             "@id": "BAU001.sparql"
           }
         },
-        "http://example.org/hv/returnFrame_DISABLED": {
+        "http://example.org/hv/returnFrame": {
           "@id": "BAU001.context.json"
         },
         "expects": "http://ld.stadt-zuerich.ch/api/TimeRange",
