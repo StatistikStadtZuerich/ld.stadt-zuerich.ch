@@ -3,7 +3,7 @@
   "listener": {
        "port": 8080
   },
-  "sparqlEndpointUrl": "https://test.lindas-data.ch:8443/lindas/query",
+  "sparqlEndpointUrl": "https://lindas-data.ch:8443/lindas/query",
   "sparqlProxy": {
     "options": {
       "queryOperation": "postQueryUrlencoded",
