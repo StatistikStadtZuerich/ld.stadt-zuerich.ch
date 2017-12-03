@@ -15,7 +15,7 @@
   },
   "hydraViews": [{
     "documentationUrl": "/api",
-    "documentation": "cwd:api/statistics/api.json",
+    "documentation": "cwd:api/statistics/api.jsonld",
     "options": {
       "sparqlEndpointUrl": "http://ld.stadt-zuerich.ch/query",
       "debug": true,
