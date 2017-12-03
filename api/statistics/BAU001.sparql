@@ -24,7 +24,7 @@ WHERE {
       <http://ld.stadt-zuerich.ch/statistics/property/RAUM> ?raum;
       <http://ld.stadt-zuerich.ch/statistics/property/KENNZAHL> ?kennzahl;
       <http://ld.stadt-zuerich.ch/statistics/property/BBA> ?bba.
-  
+
     # Get Notations
     ?raum skos:notation ?raumNotation .
     ?bba skos:notation ?bbaNotation .
@@ -34,11 +34,8 @@ WHERE {
     BIND (xsd:datetime(SUBSTR(str(?zeit),STRLEN(str(?zeit))-3)) AS ?zeitNotation)
 
     # Filter per Property
-#    FILTER (?raumNotation IN("R00400"))
-    FILTER (?bbaNotation IN("BBA3300"))
-
-    # Filter per Property
     ${typeof raum !== 'undefined'? 'FILTER (?raumNotation IN (' + (raum.join ? raum.map(v => v.toCanonical()).join() : raum.toCanonical()) + '))' : ''}
+    ${typeof bba !== 'undefined'? 'FILTER (?bbaNotation IN (' + (bba.join ? bba.map(v => v.toCanonical()).join() : bba.toCanonical()) + '))' : ''}
 
     # Filter Time Range
     ${typeof from !== 'undefined'? 'FILTER (?zeitNotation >= xsd:datetime("'+from+'"))':''}
