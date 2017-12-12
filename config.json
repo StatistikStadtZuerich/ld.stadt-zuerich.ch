@@ -32,6 +32,14 @@
       "containerGraphQuery": "CONSTRUCT { ?s a ?o. ?s <http://www.w3.org/2000/01/rdf-schema#label> ?label. } WHERE { ?s a ?o. OPTIONAL {?s <http://www.w3.org/2000/01/rdf-schema#label> ?label.} FILTER REGEX(STR(?s), \"^${iri}\") }"
     }
   },
+  "patchHeaders": {
+    "static": {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Expose-Headers": "Link",
+      "Cache-Control": "public, max-age=120",
+      "Vary": "Accept"
+    }
+  },
   "renderer": {
     "module": "trifid-renderer-simple",
     "vocab": "renderer:vocab.json"
