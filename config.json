@@ -3,30 +3,21 @@
   "listener": {
        "port": 8080
   },
-  "sparqlEndpointUrl": "https://lindas-data.ch:8443/lindas/query",
+  "sparqlEndpointUrl": "http://data.zazuko.com:5820/ssz/query",
   "sparqlProxy": {
     "options": {
       "queryOperation": "postQueryUrlencoded",
       "authentication": {
-        "user": "public",
-        "password": "public"
+        "user": "ssz-read",
+        "password": "coo2aiw6itiT"
       }
     }
   },
-  "hydraViews": [{
-    "documentationUrl": "/api",
-    "documentation": "cwd:api/statistics/api.jsonld",
-    "options": {
-      "sparqlEndpointUrl": "http://ld.stadt-zuerich.ch/query",
-      "debug": true,
-      "contextHeader": "/context/"
-    }
-  }],
   "handler": {
     "options": {
       "authentication": {
-        "user": "public",
-        "password": "public"
+        "user": "ssz-read",
+        "password": "coo2aiw6itiT"
       },
       "containerExistsQuery": "ASK { ?s a ?o. FILTER REGEX(STR(?s), \"^${iri}\") }",
       "containerGraphQuery": "CONSTRUCT { ?s a ?o. ?s <http://www.w3.org/2000/01/rdf-schema#label> ?label. } WHERE { ?s a ?o. OPTIONAL {?s <http://www.w3.org/2000/01/rdf-schema#label> ?label.} FILTER REGEX(STR(?s), \"^${iri}\") }"
