@@ -1,8 +1,15 @@
-FROM node:6-onbuild
+FROM node:6
 
-RUN echo "application/ld+json jsonld" >> /etc/mime.types
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+
+COPY package.json /usr/src/app/
+COPY . /usr/src/app
+RUN npm install && npm cache clean --force
+
+ENV NODE_ENV production
 
 RUN npm install pm2 -g
-CMD pm2-docker start npm -- start
+CMD pm2-runtime start npm -- start
 
 EXPOSE 8080
