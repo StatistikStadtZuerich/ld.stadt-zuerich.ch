@@ -1,5 +1,6 @@
 {
   "baseConfig": "trifid:config-sparql.json",
+  "datasetBaseUrl": "env:DATASETBASEURL",
   "sparqlEndpointUrl": "https://lindas-data.ch:8443/lindas/query",
   "sparqlEndpointAuthentication": {
     "user": "public",
