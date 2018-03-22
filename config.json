@@ -1,9 +1,9 @@
 {
   "baseConfig": "trifid:config-sparql.json",
-  "sparqlEndpointUrl": "http://data.zazuko.com:5820/ssz/query",
+  "sparqlEndpointUrl": "https://lindas-data.ch:8443/lindas/query",
   "sparqlEndpointAuthentication": {
-    "user": "ssz-read",
-    "password": "coo2aiw6itiT"
+    "user": "public",
+    "password": "public"
   },
   "handler": {
     "root": {
