@@ -3,27 +3,44 @@ image: docker:latest
 services:
   - docker:dind
 
-before_script:
-  - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+stages:
+  - build
+  - deploy
 
-after_script:
-
-prod:
+build_prod:
   stage: build
   script:
-    - docker build --pull -t "$CI_REGISTRY_IMAGE" .
-    - docker push "$CI_REGISTRY_IMAGE"
-    - docker tag "$CI_REGISTRY_IMAGE" "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME"
-    - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME"
-    - wget $DEPLOY_WEBHOOK/ssz-prod
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+    - docker build --pull -t "$CI_REGISTRY_IMAGE/prod" .
+    - docker push "$CI_REGISTRY_IMAGE/prod"
+    - docker tag "$CI_REGISTRY_IMAGE/prod" "$CI_REGISTRY_IMAGE/prod:$CI_COMMIT_REF_NAME"
+    - docker push "$CI_REGISTRY_IMAGE/prod:$CI_COMMIT_REF_NAME"
   only:
     - tags
 
-integ:
+build_integ:
   stage: build
   script:
-    - docker build --pull -t "$CI_REGISTRY_IMAGE:develop" .
-    - docker push "$CI_REGISTRY_IMAGE:develop"
-    - wget $DEPLOY_WEBHOOK/ssz-integ
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+    - docker build --pull -t "$CI_REGISTRY_IMAGE/integ" .
+    - docker push "$CI_REGISTRY_IMAGE/integ"
+    - docker tag "$CI_REGISTRY_IMAGE/integ" "$CI_REGISTRY_IMAGE/integ:develop"
+    - docker push "$CI_REGISTRY_IMAGE/integ:develop"
+  only:
+    - develop
+
+deploy_prod:
+  stage: deploy
+  image: cdrx/rancher-gitlab-deploy
+  script:
+    - upgrade --environment default --stack ssz-prod --service ld --new-image $CI_REGISTRY_IMAGE/prod:develop
+  only:
+    - tags
+
+deploy_integ:
+  stage: deploy
+  image: cdrx/rancher-gitlab-deploy
+  script:
+    - upgrade --environment default --stack ssz-integ --service ld --new-image $CI_REGISTRY_IMAGE/integ:develop
   only:
     - develop
