@@ -1,15 +1,23 @@
 {
   "baseConfig": "trifid:config-sparql.json",
   "datasetBaseUrl": "env:DATASETBASEURL",
-  "sparqlEndpointUrl": "https://lindas-data.ch:8443/lindas/query",
+  "sparqlEndpointUrl": "http://data.zazuko.com/ssz/query",
   "sparqlEndpointAuthentication": {
-    "user": "public",
-    "password": "public"
+    "user": "ssz-read",
+    "password": "coo2aiw6itiT"
+  },
+  "sparqlProxy": {
+    "default": {
+      "options": {
+        "queryOperation": "postQueryUrlencoded"
+      }
+    }
   },
   "handler": {
     "root": {
       "options": {
         "containerExistsQuery": "ASK { ?s a ?o. FILTER REGEX(STR(?s), \"^${iri}\") }",
+        "resourceGraphQuery": "#pragma describe.strategy cbd\nDESCRIBE <${iri}>",
         "containerGraphQuery": "CONSTRUCT { ?s a ?o. ?s <http://www.w3.org/2000/01/rdf-schema#label> ?label. } WHERE { ?s a ?o. OPTIONAL {?s <http://www.w3.org/2000/01/rdf-schema#label> ?label.} FILTER REGEX(STR(?s), \"^${iri}\") }"
       }
     }
