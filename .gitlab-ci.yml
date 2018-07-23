@@ -33,7 +33,7 @@ deploy_prod:
   stage: deploy
   image: cdrx/rancher-gitlab-deploy
   script:
-    - upgrade --environment default --stack ssz-prod --service ld --new-image $CI_REGISTRY_IMAGE/prod:develop
+    - upgrade --environment default --stack ssz-prod --service ld --new-image $CI_REGISTRY_IMAGE/prod:$CI_COMMIT_REF_NAME
   only:
     - tags
 
