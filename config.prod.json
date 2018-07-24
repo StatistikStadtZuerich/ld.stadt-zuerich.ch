@@ -1,0 +1,25 @@
+{
+  "baseConfig": "trifid:config-sparql.json",
+  "datasetBaseUrl": "env:DATASETBASEURL",
+  "sparqlEndpointUrl": "https://lindas-data.ch:8443/lindas/query",
+  "sparqlEndpointAuthentication": {
+    "user": "public",
+    "password": "public"
+  },
+  "handler": {
+    "root": {
+      "options": {
+        "containerExistsQuery": "ASK { ?s a ?o. FILTER REGEX(STR(?s), \"^${iri}\") }",
+        "containerGraphQuery": "CONSTRUCT { ?s a ?o. ?s <http://www.w3.org/2000/01/rdf-schema#label> ?label. } WHERE { ?s a ?o. OPTIONAL {?s <http://www.w3.org/2000/01/rdf-schema#label> ?label.} FILTER REGEX(STR(?s), \"^${iri}\") }"
+      }
+    }
+  },
+  "patchHeaders": {
+    "static": {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Expose-Headers": "Link",
+      "Cache-Control": "public, max-age=120",
+      "Vary": "Accept"
+    }
+  }
+}
