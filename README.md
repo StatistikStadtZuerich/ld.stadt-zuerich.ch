@@ -1,4 +1,13 @@
-# ld.stadt-zuerich.ch-site
+# ld.stadt-zuerich.ch
 
-This provides a server for the domain [ld.stadt-zuerich.ch](ld.stadt-zuerich.ch). By default the serve listens to port 80.
+This provides a server used on [ld.stadt-zuerich.ch](http://ld.stadt-zuerich.ch) and [ld.integ.stadt-zuerich.ch](http://ld.integ.stadt-zuerich.ch/).
 
+# Continuous Integration and Deployment
+
+Commits pushed to `master` are automatically deployed to:
+
+- [ld.integ.stadt-zuerich.ch](http://ld.integ.stadt-zuerich.ch/)
+
+Tags pushed are automatically deployed to:
+
+- [ld.stadt-zuerich.ch](http://ld.stadt-zuerich.ch)

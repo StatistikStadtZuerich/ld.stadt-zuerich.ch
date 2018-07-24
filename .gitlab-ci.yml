@@ -27,7 +27,7 @@ build_integ:
     - docker tag "$CI_REGISTRY_IMAGE/integ" "$CI_REGISTRY_IMAGE/integ:develop"
     - docker push "$CI_REGISTRY_IMAGE/integ:develop"
   only:
-    - develop
+    - master
 
 deploy_prod:
   stage: deploy
@@ -43,4 +43,4 @@ deploy_integ:
   script:
     - upgrade --environment default --stack ssz-integ --service ld --new-image $CI_REGISTRY_IMAGE/integ:develop
   only:
-    - develop
+    - master
