@@ -35,6 +35,7 @@ deploy_prod:
   image: cdrx/rancher-gitlab-deploy
   script:
     - upgrade --environment default --stack ssz-prod --service ld --new-image $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
+    - upgrade --environment default --stack ssz-prod --service varnish --start-before-stopping
   only:
     - tags
 
@@ -43,21 +44,6 @@ deploy_integ:
   image: cdrx/rancher-gitlab-deploy
   script:
     - upgrade --environment default --stack ssz-integ --service ld --new-image $CI_REGISTRY_IMAGE:develop
-  only:
-    - master
-
-restart_varnish_prod:
-  stage: deploy
-  image: cdrx/rancher-gitlab-deploy
-  script:
-    - upgrade --environment default --stack ssz-prod --service varnish --start-before-stopping
-  only:
-    - tags
-
-restart_varnish_integ:
-  stage: deploy
-  image: cdrx/rancher-gitlab-deploy
-  script:
     - upgrade --environment default --stack ssz-integ --service varnish --start-before-stopping
   only:
     - master
