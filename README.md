@@ -11,3 +11,6 @@ Commits pushed to `master` are automatically deployed to:
 Tags pushed are automatically deployed to:
 
 - [ld.stadt-zuerich.ch](http://ld.stadt-zuerich.ch)
+
+Simple monitoring:
+ - https://stats.zazuko.com/
