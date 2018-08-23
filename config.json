@@ -13,6 +13,11 @@
       }
     }
   },
+  "yasgui" : {
+    "default": {
+      "template": "cwd:views/index.html"
+    }
+  },
   "handler": {
     "root": {
       "options": {
