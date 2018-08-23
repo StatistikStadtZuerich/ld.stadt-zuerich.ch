@@ -1,15 +1,43 @@
 # ld.stadt-zuerich.ch
-This provides a server used on [ld.stadt-zuerich.ch](http://ld.stadt-zuerich.ch) and [ld.integ.stadt-zuerich.ch](http://ld.integ.stadt-zuerich.ch/).
+
+This server provides a Linked Data interface to the linked open statistical data published by the [Statistics Office of the City of Zurich](https://www.stadt-zuerich.ch/statistik). 
+
+Features:
+* Provides a SPARQL web frontend
+* Provides dereferencing via HTTP (a.k.a. _follow your nose_), go [here](https://ld.stadt-zuerich.ch/.well-known/void) to find out ...
+
+Visit the live installation:
+* SPARQL Frontend: https://ld.stadt-zuerich.ch/sparql
+* VoID DatasetDescription: https://ld.stadt-zuerich.ch/.well-known/void
+
+## Installation
+
+This server is based on [Trifid](https://github.com/zazuko/trifid), a [Node.js](http://nodejs.org/) based Linked Data Server.
+To install and run it you need Node.js on your system.
+
+Clone the Github repository and run 
+
+    npm install
+
+to install all module dependencies.
+
+Depending on the environment, specifiying the password for the SPARQL Endpoint as environment variable might be necessary:
+
+    export SPARQL_ENDPOINT_PASSWORD=foopass!_987
+
+To start the server with the default configuration (_config.json_), execute the following command:
+
+    npm start
 
 # Continuous Integration and Deployment
 
-Commits pushed to `master` are automatically deployed to:
+Commits pushed to `master` are automatically deployed to _integration_ :
 
-- [ld.integ.stadt-zuerich.ch](http://ld.integ.stadt-zuerich.ch/)
+- [ld.integ.stadt-zuerich.ch](https://ld.integ.stadt-zuerich.ch/)
 
-Tags pushed are automatically deployed to:
+Tags pushed are automatically deployed to _production_ :
 
-- [ld.stadt-zuerich.ch](http://ld.stadt-zuerich.ch)
+- [ld.stadt-zuerich.ch](https://ld.stadt-zuerich.ch)
 
 Simple monitoring:
  - https://stats.zazuko.com/
