@@ -8,7 +8,7 @@
   },
   "yasgui" : {
     "default": {
-      "template": "cwd:views/index.html"
+      "template": "cwd:views/yasgui.html"
     }
   },
   "handler": {
