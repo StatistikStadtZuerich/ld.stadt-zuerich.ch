@@ -27,6 +27,12 @@
       }
     }
   },
+  "renderer": {
+    "root": {
+      "template": "cwd:views/index.html",
+      "templateError": "cwd:views/error.html"
+    }
+  },
   "patchHeaders": {
     "static": {
       "Access-Control-Allow-Origin": "*",
