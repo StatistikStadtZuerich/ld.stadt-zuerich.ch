@@ -8,7 +8,8 @@ RUN chmod +x /tini
 # Build the app
 WORKDIR /app
 COPY package.json package-lock.json ./
-RUN npm ci --production
+ENV NODE_ENV production
+RUN npm ci
 COPY . .
 
 # Build runtime

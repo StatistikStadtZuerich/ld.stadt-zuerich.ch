@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: ld-stadt-zuerich-ch
+
+commonLabels:
+  app.kubernetes.io/name: ld-stadt-zuerich-ch
+
+resources:
+- deployment.yaml
+- service.yaml
+- ingress.yaml

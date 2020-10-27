@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ld-stadt-zuerich-ch
+spec:
+  template:
+    spec:
+      containers:
+        - name: ld-stadt-zuerich-ch
+          image: registry.zazuko.com/docker/ld.stadt-zuerich.ch
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          livenessProbe:
+            initialDelaySeconds: 5
+            httpGet:
+              path: /health
+              port: http
+          readinessProbe:
+            initialDelaySeconds: 5
+            httpGet:
+              path: /health
+              port: http
