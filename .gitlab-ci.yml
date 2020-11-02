@@ -20,6 +20,7 @@ build:
         --build-arg="BUILD_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ')" \
         --build-arg="COMMIT=$CI_COMMIT_SHA" \
         --destination="$CI_REGISTRY_IMAGE" \
+        --target=production \
         --build-arg "VERSION=$CI_COMMIT_REF_SLUG"
 
 # deploy to the Kubernetes cluster
