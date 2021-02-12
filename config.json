@@ -1,7 +1,7 @@
 {
   "baseConfig": "trifid:config-sparql.json",
   "datasetBaseUrl": "env:DATASETBASEURL",
-  "sparqlEndpointUrl": "http://data.zazuko.com/ssz/query",
+  "sparqlEndpointUrl": "http://data.zazuko.com/zazuko/query",
   "sparqlEndpointAuthentication": {
     "user": "ssz-read",
     "password": "env:SPARQL_ENDPOINT_PASSWORD"
@@ -13,7 +13,7 @@
       }
     }
   },
-  "yasgui" : {
+  "yasgui": {
     "default": {
       "template": "cwd:views/yasgui.html"
     }
@@ -40,5 +40,44 @@
       "Cache-Control": "public, max-age=120",
       "Vary": "Accept"
     }
+  },
+  "sszViews": {
+    "root": {
+      "path": "/views/"
+    }
+  },
+  "mediaTypeUrl": {
+    "views": {
+      "path": "/views/",
+      "formats": {
+        "csv": "text/csv",
+        "json": "application/json",
+        "jsonld": "application/ld+json",
+        "nt": "application/n-triples",
+        "ttl": "text/turtle",
+        "xml": "application/rdf+xml"
+      }
+    }
+  },
+  "plugins": {
+    "mediaTypeUrl": {
+      "priority": 85,
+      "module": "trifid-core:./plugins/middleware",
+      "middleware": "format-to-accept"
+    },
+    "sszViews": {
+      "priority": 145,
+      "module": "trifid-core:./plugins/middleware",
+      "middleware": "ssz-views/index.cjs",
+      "params": [{
+        "baseUrl": "https://ld.stadt-zuerich.ch/views/"
+      }]
+    }
+  },
+  "breakDown": {
+    "plugins.sszViews.params[0].endpointUrl": "sparqlEndpointUrl",
+    "plugins.sszViews.params[0].endpointAuthentication": "sparqlEndpointAuthentication",
+    "plugins.sszViews.params[0].viewEndpointUrl": "sparqlEndpointUrl",
+    "plugins.sszViews.params[0].viewEndpointAuthentication": "sparqlEndpointAuthentication"
   }
 }

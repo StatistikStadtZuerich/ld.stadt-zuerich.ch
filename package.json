@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "ssz-views": "git://github.com/zazuko/ssz-views.git#v0.1.0",
     "trifid": "^2.3.5"
   },
   "devDependencies": {},
