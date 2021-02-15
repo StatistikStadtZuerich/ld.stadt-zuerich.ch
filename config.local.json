@@ -2,4 +2,3 @@
   "baseConfig": "cwd:config.json",
   "datasetBaseUrl": "https://ld.stadt-zuerich.ch/"
 }
-

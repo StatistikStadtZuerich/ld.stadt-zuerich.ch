@@ -1,9 +1,8 @@
 {
   "baseConfig": "trifid:config-sparql.json",
-  "datasetBaseUrl": "env:DATASETBASEURL",
-  "sparqlEndpointUrl": "http://data.zazuko.com/zazuko/query",
+  "sparqlEndpointUrl": "env:SPARQL_ENDPOINT_URL",
   "sparqlEndpointAuthentication": {
-    "user": "ssz-read",
+    "user": "env:SPARQL_ENDPOINT_USER",
     "password": "env:SPARQL_ENDPOINT_PASSWORD"
   },
   "sparqlProxy": {

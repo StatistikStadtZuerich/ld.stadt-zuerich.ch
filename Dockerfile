@@ -51,8 +51,7 @@ USER 65534
 EXPOSE 8080
 
 FROM runtime as production
-CMD ["./node_modules/.bin/trifid", "--config", "config.prod.json"]
+CMD ["./node_modules/.bin/trifid", "--config", "config.json"]
 
 FROM runtime as develop
-ENV DATASETBASEURL "https://ld.stadt-zuerich.ch/"
-CMD ["./node_modules/.bin/trifid", "--config", "config.json"]
+CMD ["./node_modules/.bin/trifid", "--config", "config.local.json"]
