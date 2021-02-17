@@ -11,9 +11,9 @@ spec:
           imagePullPolicy: Always
           env:
             - name: SPARQL_ENDPOINT_URL
-              value: http://data.zazuko.com/zazuko/query
+              value: https://int.lindas.admin.ch/query
             - name: SPARQL_ENDPOINT_USER
-              value: ssz-read
+              value: zazu-agschwend1
             - name: SPARQL_ENDPOINT_PASSWORD
               valueFrom:
                 secretKeyRef:
