@@ -71,6 +71,10 @@
       "params": [{
         "baseUrl": "https://ld.stadt-zuerich.ch/views/"
       }]
+    },
+    "head405": {
+      "priority": 165,
+      "module": "./lib/head-405.js"
     }
   },
   "breakDown": {
