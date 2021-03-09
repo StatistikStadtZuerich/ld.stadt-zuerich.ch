@@ -1,5 +1,6 @@
 {
   "baseConfig": "trifid:config-sparql.json",
+  "datasetBaseUrl": "https://ld.stadt-zuerich.ch/",
   "sparqlEndpointUrl": "env:SPARQL_ENDPOINT_URL",
   "sparqlEndpointAuthentication": {
     "user": "env:SPARQL_ENDPOINT_USER",

@@ -7,6 +7,5 @@ commonLabels:
   app.kubernetes.io/name: ld-stadt-zuerich-ch
 
 resources:
-- deployment.yaml
-- service.yaml
-- ingress.yaml
+  - prod/
+  - integ/

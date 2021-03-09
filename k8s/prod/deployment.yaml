@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ld-stadt-zuerich-ch
+spec:
+  template:
+    spec:
+      containers:
+        - name: ld-stadt-zuerich-ch
+          image: registry.zazuko.com/docker/ld.stadt-zuerich.ch
+          imagePullPolicy: Always
+          env:
+            - name: SPARQL_ENDPOINT_URL
+              value: https://int.lindas.admin.ch/query
+            - name: SPARQL_ENDPOINT_USER
+              value: zazu-agschwend1
+            - name: SPARQL_ENDPOINT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: ld-stadt-zuerich-ch
+                  key: sparql_endpoint_password
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          livenessProbe:
+            initialDelaySeconds: 5
+            httpGet:
+              path: /health
+              port: http
+          readinessProbe:
+            initialDelaySeconds: 5
+            httpGet:
+              path: /health
+              port: http
