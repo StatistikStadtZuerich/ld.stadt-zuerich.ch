@@ -31,6 +31,7 @@ deploy:
   script:
     - cd k8s/
     - ensure-pull-secret
+    - set-gitlab-annotations
     - kustomize edit set image "${CI_REGISTRY_IMAGE}:${CI_COMMIT_TAG}"
     - kustomize build | tee manifest.yaml
     - kubectl apply -f manifest.yaml
