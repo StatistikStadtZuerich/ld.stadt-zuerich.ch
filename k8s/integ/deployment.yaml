@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ld-stadt-zuerich-ch
+  name: ld-integ-stadt-zuerich-ch
 spec:
   template:
     spec:
