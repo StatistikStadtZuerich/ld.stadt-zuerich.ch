@@ -5,10 +5,16 @@ metadata:
 spec:
   template:
     spec:
+      enableServiceLinks: false
+      securityContext:
+        runAsUser: 65534
+        runAsGroup: 65534
+
       containers:
         - name: ld-stadt-zuerich-ch
           image: registry.zazuko.com/docker/ld.stadt-zuerich.ch
           imagePullPolicy: Always
+
           env:
             - name: SPARQL_ENDPOINT_URL
               value: https://stardog-int.cluster.ldbar.ch/lindas/query
@@ -16,23 +22,36 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: sparql-credentials-integ
-                  key: password
+                  key: username
             - name: SPARQL_ENDPOINT_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: sparql-credentials-integ
                   key: password
+
           ports:
             - name: http
               containerPort: 8080
               protocol: TCP
+
+          securityContext:
+            readOnlyRootFilesystem: true
+
           livenessProbe:
             initialDelaySeconds: 5
             httpGet:
               path: /health
               port: http
+
           readinessProbe:
             initialDelaySeconds: 5
             httpGet:
               path: /health
               port: http
+
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchLabels: {}
+              topologyKey: kubernetes.io/hostname

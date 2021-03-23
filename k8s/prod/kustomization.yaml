@@ -5,6 +5,7 @@ commonLabels:
   app.kubernetes.io/instance: prod
 
 resources:
-  - deployment.yaml
-  - service.yaml
-  - ingress.yaml
+  - ./deployment.yaml
+  - ./service.yaml
+  - ./ingress.yaml
+  - ./poddisruptionbudget.yaml
