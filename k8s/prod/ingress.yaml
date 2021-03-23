@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ld-stadt-zuerich-ch
@@ -16,6 +16,9 @@ spec:
       http:
         paths:
           - path: /
+            pathType: Prefix
             backend:
-              serviceName: ld-stadt-zuerich-ch
-              servicePort: 80
+              service:
+                name: ld-stadt-zuerich-ch
+                port:
+                  name: http
