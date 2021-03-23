@@ -11,7 +11,7 @@ spec:
           imagePullPolicy: Always
           env:
             - name: SPARQL_ENDPOINT_URL
-              value: https://stardog-prod.cluster.ldbar.ch/
+              value: https://stardog.cluster.ldbar.ch/
             - name: SPARQL_ENDPOINT_USER
               valueFrom:
                 secretKeyRef:
