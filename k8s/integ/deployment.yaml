@@ -17,17 +17,11 @@ spec:
 
           env:
             - name: SPARQL_ENDPOINT_URL
-              value: https://stardog-int.cluster.ldbar.ch/lindas/query
+              value: http://data.zazuko.com/zazuko/query
             - name: SPARQL_ENDPOINT_USER
-              valueFrom:
-                secretKeyRef:
-                  name: sparql-credentials-integ
-                  key: username
+              value: public
             - name: SPARQL_ENDPOINT_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: sparql-credentials-integ
-                  key: password
+              value: public
 
           ports:
             - name: http
