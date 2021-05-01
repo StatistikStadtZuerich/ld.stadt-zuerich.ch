@@ -15,8 +15,7 @@
   },
   "yasgui": {
     "default": {
-      "template": "cwd:views/yasgui.html",
-      "urlShortener": "https://s.zazuko.com/api/v1/shorten"
+      "template": "cwd:views/yasgui.html"
     }
   },
   "handler": {
