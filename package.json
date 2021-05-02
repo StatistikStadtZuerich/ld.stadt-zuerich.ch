@@ -5,10 +5,9 @@
   "main": "index.js",
   "dependencies": {
     "http-errors": "^1.8.0",
-    "ssz-views": "git+https://ktk@github.com/zazuko/ssz-views.git#v0.1.4",
+    "ssz-views": "git+https://github.com/zazuko/ssz-views#v0.1.4",
     "trifid": "^2.3.6"
   },
-  "devDependencies": {},
   "license": "UNLICENSED",
   "scripts": {
     "start": "trifid --config config.json",
