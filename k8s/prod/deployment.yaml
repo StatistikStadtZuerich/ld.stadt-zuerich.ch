@@ -6,11 +6,36 @@ spec:
   template:
     spec:
       enableServiceLinks: false
-      securityContext:
-        runAsUser: 65534
-        runAsGroup: 65534
 
       containers:
+        - name: varnish
+          image: docker.io/zazuko/varnish-post:v1.0.3
+          env:
+            - name: BACKEND_HOST
+              value: localhost
+            - name: BACKEND_PORT
+              value: "8080"
+            - name: BACKEND_FIRST_BYTE_TIMEOUT
+              value: 600s
+            - name: CACHE_TTL
+              value: 1d
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+
+          livenessProbe:
+            initialDelaySeconds: 5
+            httpGet:
+              path: /health
+              port: http
+
+          readinessProbe:
+            initialDelaySeconds: 5
+            httpGet:
+              path: /health
+              port: http
+
         - name: ld-stadt-zuerich-ch
           image: registry.zazuko.com/docker/ld.stadt-zuerich.ch
           imagePullPolicy: Always
@@ -29,25 +54,22 @@ spec:
                   name: sparql-credentials-prod
                   key: password
 
-          ports:
-            - name: http
-              containerPort: 8080
-              protocol: TCP
-
           securityContext:
             readOnlyRootFilesystem: true
+            runAsUser: 65534
+            runAsGroup: 65534
 
           livenessProbe:
             initialDelaySeconds: 5
             httpGet:
               path: /health
-              port: http
+              port: 8080
 
           readinessProbe:
             initialDelaySeconds: 5
             httpGet:
               path: /health
-              port: http
+              port: 8080
 
       affinity:
         podAntiAffinity:
