@@ -5,7 +5,6 @@ default:
 
 stages:
   - build
-  - deploy
 
 # build Docker image
 build:
@@ -22,20 +21,3 @@ build:
         --destination="$CI_REGISTRY_IMAGE" \
         --target=production \
         --build-arg "VERSION=$CI_COMMIT_REF_SLUG"
-
-# deploy to the Kubernetes cluster
-deploy:
-  stage: deploy
-  only:
-    - tags
-  script:
-    - cd k8s/
-    - ensure-pull-secret
-    - set-gitlab-annotations
-    - kustomize edit set image "${CI_REGISTRY_IMAGE}:${CI_COMMIT_TAG}"
-    - kustomize build | tee manifest.yaml
-    - kubectl apply -f manifest.yaml
-  environment:
-    name: production
-    kubernetes:
-      namespace: ld-stadt-zuerich-ch
