@@ -1,9 +1,0 @@
-apiVersion: policy/v1beta1
-kind: PodDisruptionBudget
-metadata:
-  name: ld-stadt-zuerich-ch
-spec:
-  # There should always be at least one prod instance up
-  minAvailable: 1
-  selector:
-    matchLabels: {}
