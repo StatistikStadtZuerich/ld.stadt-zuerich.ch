@@ -6,6 +6,23 @@
     "user": "env:SPARQL_ENDPOINT_USER",
     "password": "env:SPARQL_ENDPOINT_PASSWORD"
   },
+  "rewrite": {
+    "root": {
+      "ignore": "http(s)?://[^/]+/query",
+      "mediaTypes": [
+        "application/html",
+        "application/json",
+        "application/ld+json",
+        "application/n-triples",
+        "application/rdf+xml",
+        "application/xhtml+xml",
+        "text/html",
+        "text/turtle"
+      ],
+      "rewriteContent": true,
+      "rewriteHeaders": true
+    }
+  },
   "sparqlProxy": {
     "default": {
       "options": {
