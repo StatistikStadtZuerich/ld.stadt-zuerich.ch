@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "http-errors": "^1.8.0",
-    "ssz-views": "git+https://github.com/zazuko/ssz-views#semver:v0.1.4",
+    "ssz-views": "git+https://github.com/zazuko/ssz-views#semver:v0.2.0",
     "trifid": "^2.3.6"
   },
   "license": "UNLICENSED",
