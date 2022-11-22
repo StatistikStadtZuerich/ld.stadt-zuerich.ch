@@ -25,7 +25,6 @@ build:
         --build-arg="BUILD_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ')" \
         --build-arg="COMMIT=$CI_COMMIT_SHA" \
         --build-arg="VERSION=$CI_COMMIT_REF_SLUG" \
-        --target=production \
         --no-push \
         --tarPath="$CI_PROJECT_DIR/image.tar"
 
