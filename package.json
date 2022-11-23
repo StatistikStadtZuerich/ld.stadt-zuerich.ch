@@ -6,7 +6,7 @@
   "dependencies": {
     "http-errors": "^1.8.1",
     "ssz-views": "git+https://github.com/zazuko/ssz-views#v0.2.0",
-    "trifid": "^2.3.10"
+    "trifid": "^2.4.0"
   },
   "license": "UNLICENSED",
   "scripts": {
