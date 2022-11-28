@@ -26,8 +26,7 @@
   "sparqlProxy": {
     "default": {
       "options": {
-        "queryOperation": "postQueryUrlencoded",
-         "timeout": 20000
+        "queryOperation": "postQueryUrlencoded"
       }
     }
   },
@@ -87,9 +86,11 @@
       "priority": 145,
       "module": "trifid-core:./plugins/middleware",
       "middleware": "ssz-views/index.cjs",
-      "params": [{
-        "baseUrl": "https://ld.stadt-zuerich.ch/statistics/view/"
-      }]
+      "params": [
+        {
+          "baseUrl": "https://ld.stadt-zuerich.ch/statistics/view/"
+        }
+      ]
     },
     "head405": {
       "priority": 165,
