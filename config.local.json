@@ -1,4 +1,5 @@
 {
   "baseConfig": "cwd:config.json",
-  "datasetBaseUrl": "https://ld.stadt-zuerich.ch/"
+  "datasetBaseUrl": "https://ld.stadt-zuerich.ch/",
+  "sparqlEndpointUrl": "https://ld.stadt-zuerich.ch/query"
 }
