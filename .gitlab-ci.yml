@@ -51,6 +51,7 @@ build:
   rules:
     - if: $CI_COMMIT_BRANCH == "changeset-release/master"
       when: never
+    - when: always
 
 # push Docker image
 push:
@@ -70,3 +71,4 @@ push:
   rules:
     - if: $CI_COMMIT_BRANCH == "changeset-release/master"
       when: never
+    - when: always
