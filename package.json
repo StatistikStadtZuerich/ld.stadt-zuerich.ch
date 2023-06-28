@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "@zazuko/ssz-views": "^0.2.2",
+    "@zazuko/ssz-views": "^0.2.3",
     "http-errors": "^1.8.1",
     "trifid": "^2.4.0"
   },
