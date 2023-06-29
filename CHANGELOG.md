@@ -1,5 +1,11 @@
 # ld.stadt-zuerich.ch
 
+## 1.19.6
+
+### Patch Changes
+
+- 0c582b1: Fix: missing header new line
+
 ## 1.19.5
 
 ### Patch Changes
