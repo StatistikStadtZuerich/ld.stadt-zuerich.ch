@@ -6,7 +6,7 @@
   "dependencies": {
     "@zazuko/ssz-views": "^0.2.4",
     "http-errors": "^1.8.1",
-    "trifid": "^2.4.0"
+    "trifid": "^4.1.1"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.1",
